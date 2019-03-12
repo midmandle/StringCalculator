@@ -28,4 +28,9 @@ public class StringCalculatorShould {
     void returns_2_if_given_string_2() {
         assertEquals(2, stringCalculator.add("2"));
     }
+
+    @Test
+    void add_two_numbers() {
+        assertEquals(3, stringCalculator.add("1,2"));
+    }
 }
