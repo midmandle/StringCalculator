@@ -1,5 +1,5 @@
 public class StringCalculator {
-    public static int Add(String numbers) {
-        return -1;
+    public int add(String numbers) {
+        return 0;
     }
 }
