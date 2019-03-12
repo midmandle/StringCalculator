@@ -33,8 +33,9 @@ public class StringCalculatorShould {
     @CsvSource({
             "'1,2', 3",
             "'10,1', 11",
+            "'10,1,2', 13",
     })
-    void add_two_numbers(String numbers, int expectedSum) {
+    void add_multiple_numbers(String numbers, int expectedSum) {
         assertEquals(expectedSum, stringCalculator.add(numbers));
     }
 }
