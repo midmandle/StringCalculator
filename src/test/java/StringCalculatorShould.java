@@ -34,6 +34,7 @@ public class StringCalculatorShould {
             "'1,2', 3",
             "'10,1', 11",
             "'10,1,2', 13",
+            "'10,1,2,3', 16",
     })
     void add_multiple_numbers(String numbers, int expectedSum) {
         assertEquals(expectedSum, stringCalculator.add(numbers));
