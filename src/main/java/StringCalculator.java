@@ -3,7 +3,7 @@ public class StringCalculator {
 
         if (numbers.isEmpty()) return 0;
 
-        String[] numbersAsStrings = numbers.split(",");
+        String[] numbersAsStrings = numbers.split(",|\n");
 
         int total = 0;
 
