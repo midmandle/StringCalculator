@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import javax.swing.*;
 
@@ -29,8 +31,12 @@ public class StringCalculatorShould {
         assertEquals(2, stringCalculator.add("2"));
     }
 
-    @Test
-    void add_two_numbers() {
-        assertEquals(3, stringCalculator.add("1,2"));
+    @ParameterizedTest
+    @CsvSource({
+            "'1,2', 3",
+            "'10,1', 11",
+    })
+    void add_two_numbers(String numbers, int expectedSum) {
+        assertEquals(expectedSum, stringCalculator.add(numbers));
     }
 }
