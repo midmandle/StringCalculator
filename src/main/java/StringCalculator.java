@@ -7,17 +7,8 @@ public class StringCalculator {
 
         int total = 0;
 
-        if (numbersAsStrings.length == 1) {
-            total += Integer.parseInt(numbers);
-        }
-
-        if (numbersAsStrings.length >= 2){
-            total += convertStringToNumber(numbersAsStrings[0]);
-            total += convertStringToNumber(numbersAsStrings[1]);
-        }
-
-        if (numbersAsStrings.length == 3){
-            total += convertStringToNumber(numbersAsStrings[2]);
+        for (String number : numbersAsStrings) {
+            total += convertStringToNumber(number);
         }
 
         return total;
