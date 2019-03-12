@@ -5,18 +5,25 @@ public class StringCalculator {
 
         String[] numbersAsStrings = numbers.split(",");
 
+        int total = 0;
+
         if (numbersAsStrings.length == 1) {
-            int number = Integer.parseInt(numbers);
-            return number;
+            total += Integer.parseInt(numbers);
         }
 
-        int number1 = Integer.parseInt(numbersAsStrings[0]);
-        int number2 = Integer.parseInt(numbersAsStrings[1]);
+        if (numbersAsStrings.length >= 2){
+            total += convertStringToNumber(numbersAsStrings[0]);
+            total += convertStringToNumber(numbersAsStrings[1]);
+        }
 
-        int number3 = 0;
-        if(numbersAsStrings.length == 3)
-            number3 = Integer.parseInt(numbersAsStrings[2]);
+        if (numbersAsStrings.length == 3){
+            total += convertStringToNumber(numbersAsStrings[2]);
+        }
 
-        return number1 + number2 + number3;
+        return total;
+    }
+
+    private int convertStringToNumber(String number) {
+        return Integer.parseInt(number);
     }
 }
