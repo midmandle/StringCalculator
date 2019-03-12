@@ -13,6 +13,10 @@ public class StringCalculator {
         int number1 = Integer.parseInt(numbersAsStrings[0]);
         int number2 = Integer.parseInt(numbersAsStrings[1]);
 
-        return number1 + number2;
+        int number3 = 0;
+        if(numbersAsStrings.length == 3)
+            number3 = Integer.parseInt(numbersAsStrings[2]);
+
+        return number1 + number2 + number3;
     }
 }
