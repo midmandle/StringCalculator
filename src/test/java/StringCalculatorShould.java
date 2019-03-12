@@ -40,8 +40,17 @@ public class StringCalculatorShould {
         assertEquals(expectedSum, stringCalculator.add(numbers));
     }
 
+    @ParameterizedTest
+    @CsvSource({
+            "'1\n1', 2",
+            "'1\n2,3', 6",
+    })
+    void add_multiples_number_separate_by_new_line(String numbers, int expectedSum) {
+        assertEquals(expectedSum, stringCalculator.add(numbers));
+    }
+
     @Test
-    void add_multiples_number_separate_by_new_line() {
-        assertEquals(2, stringCalculator.add("1\n1"));
+    void have_custom_delimiters() {
+        assertEquals(3, stringCalculator.add("//;\n1;2"));
     }
 }
