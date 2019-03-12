@@ -39,4 +39,9 @@ public class StringCalculatorShould {
     void add_multiple_numbers(String numbers, int expectedSum) {
         assertEquals(expectedSum, stringCalculator.add(numbers));
     }
+
+    @Test
+    void add_multiples_number_separate_by_new_line() {
+        assertEquals(2, stringCalculator.add("1\n1"));
+    }
 }
